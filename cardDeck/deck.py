@@ -36,15 +36,19 @@ class Deck:
     def count(self):
         return len(self.cards)
 
+    def __iter__(self):
+        return iter(self.cards)
 
 deck = Deck()
 print(deck.cards)
 print(deck.count())
 print(deck)
-print(deck._deal(5))
+# print(deck._deal(5))
 deck.shuffle()
 print(deck.cards)
-print(deck.deal_card())
-print(deck.deal_hand(5))
+# print(deck.deal_card())
+# print(deck.deal_hand(5))
 print(deck.cards)
 print(deck.count())
+for card in deck:
+    print(card)
